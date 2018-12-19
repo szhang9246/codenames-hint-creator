@@ -1,6 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 
+with open('words.txt', 'r') as f:
+    code = f.readlines()
+
 page = requests.get('https://en.wikipedia.org/wiki/Bear')
 soup = BeautifulSoup(page.content, 'html.parser')
 body = soup.find_all('body')
